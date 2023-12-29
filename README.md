@@ -42,7 +42,8 @@ Install portainer
 
 	docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 
-### 6. Install containers through portainer
+## Install containers through portainer
+
 1. Go to your portainer instance: https://pihome.local:9443
 2. Go to stacks
 3. Click "Add stack"
