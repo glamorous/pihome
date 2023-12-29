@@ -2,7 +2,8 @@ PiHome
 ============
 Docker compose repo for home server based on a raspberry Pi with a couple of handy services.
 Included services:
-- [Heimdall](https://github.com/linuxserver/Heimdall) (application dashboard and launcher)
+- [Heimdall](https://github.com/linuxserver/Heimdall) (Application dashboard and launcher)
+- [Pi-hole](https://pi-hole.net) (A black hole for Internet advertisements)
 
 ## Prerequisites
 
