@@ -24,3 +24,10 @@ services:
         volumes:
             - ${PIHOLE_DATA}:/etc/pihole
             - ${PIHOLE_CONFIG}:/etc/dnsmasq.d
+    homeassistant:
+        image: homeassistant/home-assistant:latest
+        container_name: home-assistant
+        restart: unless-stopped
+        network_mode: host
+        volumes:
+            - ${HA_CONFIG}:/config

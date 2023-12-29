@@ -4,6 +4,7 @@ Docker compose repo for home server based on a raspberry Pi with a couple of han
 Included services:
 - [Heimdall](https://github.com/linuxserver/Heimdall) (Application dashboard and launcher)
 - [Pi-hole](https://pi-hole.net) (A black hole for Internet advertisements)
+- [Homeassistant](https://www.home-assistant.io) (Open source home automation that puts local control and privacy first. )
 
 ## Prerequisites
 
