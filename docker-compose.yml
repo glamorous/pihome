@@ -9,6 +9,11 @@ services:
             - "${HEIMDALL_PORT_HTTPS}:443"
         volumes:
             - ${HEIMDALL_DIR}/config:/config
+        environment:
+            - PUID=${PUID}
+            - PGID=${PGID}
+            - TZ=${TZ}
+        user: ${LOCAL_USER}:${LOCAL_USER}
     pihole:
         image: pihole/pihole:latest
         container_name: pihole
@@ -19,10 +24,12 @@ services:
             - "${PIHOLE_PORT_HTTP}:80"
             - "${PIHOLE_PORT_HTTPS}:443"
         environment:
+            - TZ=${TZ}
             - WEBPASSWORD=${PIHOLE_ADMIN_PASSWORD}
         volumes:
             - ${PIHOLE_DIR}/etc/pihole:/etc/pihole
             - ${PIHOLE_DIR}/etc/dnsmasq.d:/etc/dnsmasq.d
+        user: ${LOCAL_USER}:${LOCAL_USER}
     homeassistant:
         image: "ghcr.io/home-assistant/home-assistant:stable"
         container_name: home-assistant
@@ -35,3 +42,4 @@ services:
             - ${HA_DIR}/etc/localtime:/etc/localtime:ro
             - ${HA_DIR}/run/dbus:/run/dbus:ro
         privileged: true
+        user: ${LOCAL_USER}:${LOCAL_USER}
