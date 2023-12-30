@@ -29,7 +29,6 @@ services:
         volumes:
             - ${PIHOLE_DIR}/etc/pihole:/etc/pihole
             - ${PIHOLE_DIR}/etc/dnsmasq.d:/etc/dnsmasq.d
-        user: ${LOCAL_USER}:${LOCAL_USER}
     homeassistant:
         image: "ghcr.io/home-assistant/home-assistant:stable"
         container_name: home-assistant
