@@ -25,9 +25,14 @@ services:
             - ${PIHOLE_DATA}:/etc/pihole
             - ${PIHOLE_CONFIG}:/etc/dnsmasq.d
     homeassistant:
-        image: homeassistant/home-assistant:latest
+        image: "ghcr.io/home-assistant/home-assistant:stable"
         container_name: home-assistant
         restart: unless-stopped
         network_mode: host
+        devices:
+            - /dev/ttyUSB0:/dev/ttyUSB0
         volumes:
-            - ${HA_CONFIG}:/config
+            - ${HA_DIR}/config:/config
+            - ${HA_DIR}/etc/localtime:/etc/localtime:ro
+            - ${HA_DIR}/run/dbus:/run/dbus:ro
+        privileged: true
