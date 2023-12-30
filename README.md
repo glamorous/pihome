@@ -15,7 +15,7 @@ Edit `/boot/config.txt` and add this line:
 
 	gpu_mem=16
 
-### 2. Boot up your device
+### 2. Boot up your device and update
 After booting your device, run the basic updates/upgrades:
 
 	sudo apt-get update
