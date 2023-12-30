@@ -13,7 +13,6 @@ services:
             - PUID=${PUID}
             - PGID=${PGID}
             - TZ=${TZ}
-        user: ${LOCAL_USER}:${LOCAL_USER}
     pihole:
         image: pihole/pihole:latest
         container_name: pihole
