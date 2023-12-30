@@ -4,17 +4,15 @@ services:
         image: linuxserver/heimdall:latest
         container_name: heimdall
         restart: unless-stopped
-        env_file: stack.env
         ports:
             - "${HEIMDALL_PORT_HTTP}:80"
             - "${HEIMDALL_PORT_HTTPS}:443"
         volumes:
-            - ${HEIMDALL_CONFIG}:/config
+            - ${HEIMDALL_DIR}/config:/config
     pihole:
         image: pihole/pihole:latest
         container_name: pihole
         restart: unless-stopped
-        env_file: stack.env
         ports:
             - "53:53/tcp"
             - "53:53/udp"
@@ -23,13 +21,12 @@ services:
         environment:
             - WEBPASSWORD=${PIHOLE_ADMIN_PASSWORD}
         volumes:
-            - ${PIHOLE_DATA}:/etc/pihole
-            - ${PIHOLE_CONFIG}:/etc/dnsmasq.d
+            - ${PIHOLE_DIR}/etc/pihole:/etc/pihole
+            - ${PIHOLE_DIR}/etc/dnsmasq.d:/etc/dnsmasq.d
     homeassistant:
         image: "ghcr.io/home-assistant/home-assistant:stable"
         container_name: home-assistant
         restart: unless-stopped
-        env_file: stack.env
         network_mode: host
         devices:
             - /dev/ttyUSB0:/dev/ttyUSB0

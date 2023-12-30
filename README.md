@@ -56,6 +56,5 @@ Install portainer
      - GitOps updates: true
      - Fetch interval: 5m
    - Environment variables
-       - Upload the stack.env
        - Upload the secrets.env and adjust where needed (only first time, otherwise manual adding)
 4. Deploy the stack
