@@ -56,5 +56,5 @@ Install portainer
      - GitOps updates: true
      - Fetch interval: 5m
    - Environment variables
-     - Go into advanced mode and copy paste the .env.example and adjust variables
+       - Upload the stack.env as .env file and adjust where needed
 4. Deploy the stack
