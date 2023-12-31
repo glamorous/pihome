@@ -5,6 +5,7 @@ Included services:
 - [Heimdall](https://github.com/linuxserver/Heimdall) (Application dashboard and launcher)
 - [Pi-hole](https://pi-hole.net) (A black hole for Internet advertisements)
 - [Homeassistant](https://www.home-assistant.io) (Open source home automation that puts local control and privacy first. )
+- [InfluxDB](https://www.influxdata.com) (Database that stores and queries any type of time series data)
 
 ## Prerequisites
 
