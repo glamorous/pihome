@@ -42,4 +42,3 @@ services:
             - ${HA_DIR}/etc/localtime:/etc/localtime:ro
             - ${HA_DIR}/run/dbus:/run/dbus:ro
         privileged: true
-        user: ${LOCAL_USER}:${LOCAL_USER}
