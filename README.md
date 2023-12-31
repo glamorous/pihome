@@ -59,3 +59,43 @@ Install portainer
    - Environment variables
        - Upload the secrets.env and adjust where needed (only first time, otherwise manual adding)
 4. Deploy the stack
+
+## Setting up InfluxDB (first time only!)
+
+1. Go to http://pihome.local:8086 and follow onboarding
+2. Choose a username and password
+3. Choose "home" as your organisation name
+4. Choose "homeassistant" as your bucket name
+5. Click "Quick start"
+
+### Create token(s) for applications
+
+Instead of username and password, we need tokens for applications that will use InfluxDB (such as Home assistant)
+1. Click "API tokens" on first menu item
+2. Click "Generate API token" - "Custom API token"
+3. Click a name, for example "homeassistant" and choose the correct rights for the selected bucket
+   - Home assistant will need write access!
+4. Copy the token so you can add it to your config of the application
+
+#### Configure HomeAssistant for usage with InfluxDB
+
+Open HomeAssistant `configuration.yaml` file and add:
+
+```
+influxdb:
+  api_version: 2
+  ssl: false
+  host: influxdb
+  port: 8086
+  token: !secret INFLUXDB_TOKEN
+  organization: !secret INFLUXDB_ORG
+  bucket: !secret INFLUXDB_BUCKET
+```
+
+Open HomeAssistant `secrets.yaml` file and add:
+
+```
+INFLUXDB_TOKEN: YOUR_API_TOKEN_FROM_PREVIOUS_STEP
+INFLUXDB_ORG: home
+INFLUXDB_BUCKET: homeassistant
+```
