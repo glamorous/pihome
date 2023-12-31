@@ -55,4 +55,4 @@ services:
         ports:
             - "${INFLUXDB_PORT}:8086"
         volumes:
-            - ${INFLUXDB_DIR}/var/lib/influxdb:/var/lib/influxdb
+            - ${INFLUXDB_DIR}/var/lib/influxdb2:/var/lib/influxdb2
