@@ -85,7 +85,7 @@ Open HomeAssistant `configuration.yaml` file and add:
 influxdb:
   api_version: 2
   ssl: false
-  host: influxdb
+  host: localhost
   port: 8086
   token: !secret INFLUXDB_TOKEN
   organization: !secret INFLUXDB_ORG
