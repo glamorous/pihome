@@ -52,8 +52,9 @@ services:
             - "${INFLUXDB_PORT}:8086"
         volumes:
             - ${INFLUXDB_DIR}/var/lib/influxdb2:/var/lib/influxdb2
-    db:
+    mariadb:
         image: mariadb
+        container_name: db
         environment:
             MYSQL_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
             HA_DB_PASSWORD: ${HA_DB_PASSWORD}
