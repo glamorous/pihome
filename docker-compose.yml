@@ -59,7 +59,7 @@ services:
             MYSQL_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
             HA_DB_PASSWORD: ${HA_DB_PASSWORD}
         volumes:
-            - ${MARIADB_DIR}/init:/docker-entrypoint-initdb.d
+            - ./mariadb/init:/docker-entrypoint-initdb.d
             - ${MARIADB_DIR}/data:/var/lib/mysql
         ports:
             - ${MARIADB_PORT}:3306
