@@ -28,6 +28,9 @@ services:
         volumes:
             - ${PIHOLE_DIR}/etc/pihole:/etc/pihole
             - ${PIHOLE_DIR}/etc/dnsmasq.d:/etc/dnsmasq.d
+        dns:
+            - 127.0.0.1
+            - 1.1.1.2
     homeassistant:
         image: "ghcr.io/home-assistant/home-assistant:stable"
         container_name: home-assistant
