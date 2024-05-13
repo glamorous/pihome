@@ -25,6 +25,8 @@ services:
         environment:
             - TZ=${TZ}
             - WEBPASSWORD=${PIHOLE_ADMIN_PASSWORD}
+            - PIHOLE_UID=${PUID}
+            - PIHOLE_GID=${PGID}
         volumes:
             - ${PIHOLE_DIR}/etc/pihole:/etc/pihole
             - ${PIHOLE_DIR}/etc/dnsmasq.d:/etc/dnsmasq.d
