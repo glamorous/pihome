@@ -7,6 +7,7 @@ Included services:
 - [Homeassistant](https://www.home-assistant.io) (Open source home automation that puts local control and privacy first. )
 - [InfluxDB](https://www.influxdata.com) (Database that stores and queries any type of time series data)
 - [MariaDB](https://mariadb.com) (Relational database)
+- [Node-RED](https://nodered.org) (Browser-based flow editing)
 
 ## Prerequisites
 

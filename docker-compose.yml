@@ -47,6 +47,16 @@ services:
             - ${HA_DIR}/etc/localtime:/etc/localtime:ro
             - ${HA_DIR}/run/dbus:/run/dbus:ro
         privileged: true
+    node-red:
+        image: nodered/node-red:latest
+        container_name: node-red
+        restart: unless-stopped
+        environment:
+            - TZ=${TZ}
+        ports:
+            - "${NODE_RED_PORT}:1880"
+        volumes:
+            - ${NODE_RED_DIR}:/data
     influxdb:
         image: influxdb:latest
         container_name: influxdb
