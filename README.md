@@ -101,3 +101,17 @@ INFLUXDB_TOKEN: YOUR_API_TOKEN_FROM_PREVIOUS_STEP
 INFLUXDB_ORG: home
 INFLUXDB_BUCKET: homeassistant
 ```
+
+## Connecting Home Assistant with Node-Red
+
+### Home Assistant
+
+1. Create "node-red" user with an administrator role in Home Assistant
+2. Login with new user
+3. Create a long-lived access token
+
+### Node-RED
+
+1. Click Menu -> Manage Palette -> Install
+2. Search for node-red-contrib-home-assistant-websocket and install
+3. Configure/Add Home Assistant server by selecting node and "Add a server" en fill on details and live access token.

@@ -51,12 +51,15 @@ services:
         image: nodered/node-red:latest
         container_name: node-red
         restart: unless-stopped
+        network_mode: host
         environment:
             - TZ=${TZ}
         ports:
             - "${NODE_RED_PORT}:1880"
         volumes:
             - ${NODE_RED_DIR}:/data
+        depends_on:
+            - homeassistant
     influxdb:
         image: influxdb:latest
         container_name: influxdb
